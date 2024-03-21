@@ -12,5 +12,12 @@ html {
 }
 
 body {
+  background: url(/public/assets/img5.png) fixed; /* Set background image as fixed */
+  background-size: contain;
+  /* background-repeat: no-repeat; */
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   min-height: 1000px;
 }
