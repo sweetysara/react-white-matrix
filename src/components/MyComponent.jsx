@@ -1,5 +1,7 @@
 // src/components/MyComponent.jsx
 import React, { useEffect, useRef } from 'react';
+import { FaEnvelope, FaPhone } from 'react-icons/fa'; // Import necessary icons
+import { useNavigate } from 'react-router-dom';
 
 import {
   StyledHeader,
@@ -33,6 +35,7 @@ const MyComponent = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+  const navigate= useNavigate()
 
   return (
     <>
@@ -69,7 +72,7 @@ const MyComponent = () => {
             <StyledBanner id='home'>
                 {/* Banner Content */}
                 <h2>
-                    We Make<span> Brands</span> Matter.
+                    We Make<span> Brands</span> Matter
                 </h2>
             </StyledBanner>
 
@@ -90,9 +93,9 @@ const MyComponent = () => {
                             with desktop publishing software like Aldus PageMaker including
                             versions of Lorem Ipsum.
                         </p>
-                        <a href="#" className="btn">
-                            Get Started
-                        </a>
+                        <button onClick={() => navigate("/Login")} className="btn" >
+                          Get Started
+                        </button>
                     </div>
                 </div>
             </StyledAboutSection>
@@ -158,34 +161,19 @@ const MyComponent = () => {
             <StyledContactSection id='contact'>
                 {/* Contact Section Content */}
                 <div className="content">
-                    <div className="mxw800p">
-                        <h3>Send Us A Message</h3>
-                        <p>
-                            What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the
-                            printing and typesetting industry.
-                        </p>
+                <div className="mxw800p">
+                <h3>Contact Us</h3>
+                <div className="contact-info">
+                    <FaEnvelope className="icon" /> {/* Use the icon component */}
+                    <h4 className="text">123xbee123@gmail.com</h4>
                     </div>
+                    <div className="contact-info">
+                    <FaPhone className="icon" /> {/* Use the icon component */}
+                    <h4 className="text">+91 99227 76544</h4>
+                </div>
+                </div>
                     <div className="contactForm">
-                        <form>
-                            <div className="row100">
-                                <div className="inputBx50">
-                                    <input type="text" name="" placeholder="Full Name" />
-                                </div>
-                                <div className="inputBx50">
-                                    <input type="text" name="" placeholder="Email Address" />
-                                </div>
-                            </div>
-                            <div className="row100">
-                                <div className="inputBx100">
-                                    <textarea placeholder="Message"></textarea>
-                                </div>
-                            </div>
-                            <div className="row100">
-                                <div className="inputBx100">
-                                    <input type="submit" name="" value="Send" />
-                                </div>
-                            </div>
-                        </form>
+                        
                     </div>
                     <div className="sci">
                         <ul>

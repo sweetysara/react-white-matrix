@@ -150,14 +150,26 @@ export const StyledBanner = styled.section`
   position: relative;
   width: 100%;
   min-height: 100vh;
-  background: url(./assets/blurry.png);
+  background: url(./assets/b1.svg);
   background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index:-2;
+
+  &::before {
+    content: ''; /* Ensure that content property is defined */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Example background color */
+    z-index: -1; /* Ensure it stays behind other content */
+  }
 
   h2 {
-    color: #efefe4;
+    color: #fff;
     font-size: 90px;
     text-transform: uppercase;
     text-align: center;
@@ -165,6 +177,7 @@ export const StyledBanner = styled.section`
 
     span {
       color: #000000;
+      text-shadow: 0 0 10px #fff,0 0 20px #fff,0 0 40px #a5a7a8;
     }
   }
 
@@ -177,18 +190,22 @@ export const StyledBanner = styled.section`
 `;
 
 export const StyledAboutSection = styled.section`
-  background: url(assets/sand_dune.jpg);
+  background: url(assets/ab.png);
   background-size: cover;
   padding: 100px;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-size: cover;
+  background-position: center;
+  position: relative;
 
   .content {
     position: relative;
     text-align: center;
     width: 100%;
+    color:black;
   }
 
   .mxw800p {
@@ -200,7 +217,7 @@ export const StyledAboutSection = styled.section`
     font-size: 40px;
     font-weight: 400;
     margin-bottom: 10px;
-    color: #ffffff;
+    color: #000000;
   }
 
 
@@ -215,22 +232,27 @@ export const StyledAboutSection = styled.section`
   }
 
   .about_para {
-    color: #ffffff;
+    color: #000000;
   }
-
+  
   .btn {
     position: relative;
     display: inline-block;
-    padding: 10px 30px;
+    padding: 15px 40px;
     background: #000;
     text-decoration: none;
     color: #ffffff;
-    border-radius: 50px;
+    border-radius: 5px;
+    font-size: 20px;
+  }
+  
+  .btn:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7); /* Add box shadow on hover */
   }
 `;
 
 export const StyledServiceSection = styled.section`
-  background-image: url('assets/cosmos.jpg');
+  background: black;
   background-size: cover;
   padding: 100px;
   display: flex;
@@ -311,18 +333,39 @@ export const StyledServiceSection = styled.section`
 
 export const StyledContactSection = styled.section`
   background: #000;
+  background-image: url('./assets/abc.jpg'); /* Background image */
+  background-size: cover; /* Cover the entire container */
 
   .content {
     position: relative;
     text-align: center;
     max-width: 800px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 30px;
   }
-
-
+  .contact-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .contact-info .icon {
+    font-size: 24px; /* Set the size of the icon */
+    margin-right: 14px;
+    color: white;
+  }
+  .contact-info .text {
+    margin-top: 10px; /* Adjust the margin-top as needed */
+    padding:10px;
+  }
   h3 {
     font-size: 40px;
+    font-weight: 400;
+    margin-bottom: 10px;
+    color: #ffffff;
+  }
+  h4 {
+    font-size: 25px;
     font-weight: 400;
     margin-bottom: 10px;
     color: #ffffff;
